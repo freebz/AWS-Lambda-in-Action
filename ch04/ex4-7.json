@@ -1,0 +1,15 @@
+// 리스트 4.7  Lambda basic execution role의 신뢰 관계
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+	"Service": "lambda.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
