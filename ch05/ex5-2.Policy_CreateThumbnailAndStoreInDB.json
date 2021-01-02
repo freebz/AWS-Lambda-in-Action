@@ -1,0 +1,34 @@
+// 리스트 5.2  Policy_CreateThumbnailAndStoreInDB
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+	"s3:GetObject"
+      ],
+      "Resource": [
+	"arn:aws:s3:::<BUCKET-NAME>/images/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+	"s3:PutObject"
+      ],
+      "Resource": [
+	"arn:aws:s3:::<BUCKET-NAME>/thumbs/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+	"dynamodb:PutItem"
+      ],
+      "Resource": [
+	"<DYNAMODB-TABLE-ARN>"
+      ]
+    }
+  ]
+}

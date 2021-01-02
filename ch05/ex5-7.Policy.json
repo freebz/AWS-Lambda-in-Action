@@ -1,0 +1,28 @@
+// 리스트 5.7  Policy
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+	"s3:ListBucket"
+      ],
+      "Resource": [
+	"arn:aws:s3:::<BUCKET-NAME>"
+      ],
+      "Condition": {
+	"StringLike": { "s3:prefix": [ "tmp/*" ] }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+	"s3:DeleteObject"
+      ],
+      "Resource": [
+	"arn:aws:s3:::<BUCKET-NAME>/tmp/*"
+      ]
+    }
+  ]
+}

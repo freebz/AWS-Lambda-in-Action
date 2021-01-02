@@ -1,0 +1,14 @@
+// 리스트 5.3  Policy_Public_S3_Bucket
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::<BUCKET-NAME>/*"
+    }
+  ]
+}
