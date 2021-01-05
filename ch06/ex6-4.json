@@ -1,0 +1,36 @@
+// 리스트 6.4  Amazon DynamoDB에 익명 접근하기 위한 정책
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+	"dynamodb:GetItem",
+	"dynamodb:BatchGetItem",
+	"dynamodb:Query"
+      ],
+      "Resource": [
+	"arn:aws:dynamodb:<region>:<account-id>:table/<table-name>"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+	"dynamodb:PutItem",
+	"dynamodb:UpdateItem",
+	"dynamodb:DeleteItem",
+	"dynamodb:BatchWriteItem"
+      ],
+      "Resource": [
+	"arn:aws:dynamodb:us-east-1:123456789012:table/MyTable"
+      ],
+      "Condition": {
+	"ForAllValues:StringEquals": {
+	  "dynamodb:LeadingKeys":
+	    ["${cognito-identity.amazonaws.com:sub}"]
+	}
+      }
+    }
+  ]
+}

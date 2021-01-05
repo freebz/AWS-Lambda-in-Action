@@ -1,0 +1,23 @@
+// 리스트 6.5  인증되지 않은 역할을 사용하기 위한 Amazon Cognito 신뢰 정책
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+	"Federated": "cognito-identity.amazonaws.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+	"StringEquals": {
+	  "cognito-identity.amazonaws.com:aud": "<identity-pool-id>"
+	},
+	"ForAnyValue:StringLike": {
+	  "cognito-identity.amazonaws.com:amr": "unauthenticated"
+	}
+      }
+    }
+  ]
+}

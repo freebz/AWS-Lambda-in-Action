@@ -1,0 +1,28 @@
+// 리스트 6.3  Amazon DynamoDB에 인증된 접근하기 위한 정책
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+	"dynamodb:GetItem",
+	"dynamodb:BatchGetItem",
+	"dynamodb:Query",
+	"dynamodb:PutItem",
+	"dynamodb:UpdateItem",
+	"dynamodb:DeleteItem",
+	"dynamodb:BatchWriteItem"
+      ],
+      "Resource": [
+	"arn:aws:dynamodb:<region>:<account-id>:table/<table-name>"
+      ],
+      "Condition": {
+	"ForAllValues:StringEquals": {
+	  "dynamodb:LeadingKeys":
+	    ["${cognito-identity.amazonaws.com:sub}"]
+	}
+      }
+    }
+  ]
+}
