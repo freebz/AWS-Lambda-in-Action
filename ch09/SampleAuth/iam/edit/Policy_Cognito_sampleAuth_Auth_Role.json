@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "mobileanalytics:PutEvents",
+                "cognito-sync:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": [
+                "arn:aws:lambda:ap-northeast-2:542416706327:function:sampleAuthCreateUser",
+                "arn:aws:lambda:ap-northeast-2:542416706327:function:sampleAuthVerifyUser",
+                "arn:aws:lambda:ap-northeast-2:542416706327:function:sampleAuthChangePassword",
+                "arn:aws:lambda:ap-northeast-2:542416706327:function:sampleAuthLostUser",
+                "arn:aws:lambda:ap-northeast-2:542416706327:function:sampleAuthLostPassword",
+                "arn:aws:lambda:ap-northeast-2:542416706327:function:sampleAuthResetPassword",
+                "arn:aws:lambda:ap-northeast-2:542416706327:function:sampleAuthLogin"
+            ]
+        }
+    ]
+}

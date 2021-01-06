@@ -1,0 +1,30 @@
+// 리스트 9.8  람다 정책 createUser
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+	"dynamodb:PutItem"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:dynamodb:<REGION>:<AWS_ACCOUNT_ID>:table/<DYNAMODB_TABLE>"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+	"ses:SendEmail",
+	"ses:SendRawEamil"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "",
+      "Resource": "*",
+      "Action": [
+	"logs:*"
+      ],
+      "Effect": "Allow"
+    }
+  ]
+}

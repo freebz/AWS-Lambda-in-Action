@@ -1,0 +1,14 @@
+{
+  "AWS_ACCOUNT_ID": "542416706327",
+  "REGION": "ap-northeast-2",
+  "BUCKET": "fx-sample-auth",
+  "MAX_AGE": "10",
+  "DDB_TABLE": "SampleAuthUsers",
+  "IDENTITY_POOL_NAME": "SampleAuth",
+  "DEVELOPER_PROVIDER_NAME": "login.yourdomain.com",
+  "EXTERNAL_NAME": "Sample Authentication",
+  "EMAIL_SOURCE": "freebz.dev@gmail.com",
+  "VERIFICATION_PAGE": "https://fx-sample-auth.s3.amazonaws.com/verify.html",
+  "RESET_PAGE": "https://fx-sample-auth.s3.amazonaws.com/resetPassword.html",
+  "IDENTITY_POOL_ID": "ap-northeast-2:0a534175-1c72-4e46-a764-cc1ce755d64a"
+}
