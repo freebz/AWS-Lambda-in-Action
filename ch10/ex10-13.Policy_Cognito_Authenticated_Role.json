@@ -1,0 +1,31 @@
+// 리스트 10.13  Policy_Cognito_Authenticated_Role
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+	"mobileanalytics:PutEvents",
+	"cognito-sync:*"
+      ],
+      "Resource": [
+	"*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+	"lambda:InvokeFunction"
+      ],
+      "Resource": [
+	"arn:aws:lambda:<RESION>:<ACCOUNT>:function:createUser",
+	"arn:aws:lambda:<RESION>:<ACCOUNT>:function:verifyUser",
+	"arn:aws:lambda:<RESION>:<ACCOUNT>:function:changePassword",
+	"arn:aws:lambda:<RESION>:<ACCOUNT>:function:lostPassword",
+	"arn:aws:lambda:<RESION>:<ACCOUNT>:function:resetPassword",
+	"arn:aws:lambda:<RESION>:<ACCOUNT>:function:sampleAuthLogin"
+      ]
+    }
+  ]
+}

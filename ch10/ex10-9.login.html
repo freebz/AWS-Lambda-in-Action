@@ -1,0 +1,28 @@
+<!-- 리스트 10.9  login.html(Login 페이지) -->
+
+<html>
+  <head>
+    <title>Login - Sample Authentication Service</title>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.16.min.js">
+    </script>
+  </head>
+  <body>
+    <h2>Sample Authentication Service</h2>
+    <h1>Login</h1>
+    <form role="form" id="login-form">
+      <div>
+	<label for="email">Email:</label>
+	<input type="text" class="form-control" id="email">
+      </div>
+      <div>
+	<label for="password">Password:</label>
+	<input type="password" class="form-control" id="password">
+      </div>
+      <button type="submit" id="login-button">Login</button>
+    </form>
+    <div id="result">
+    </div>
+    <a href="index.html">Back</a>
+    <script src="js/login.js"></script>
+  </body>
+</html>

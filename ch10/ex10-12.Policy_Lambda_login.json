@@ -1,0 +1,30 @@
+// 리스트 10.12  Policy_Lambda_login
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+	"dynamodb:GetItem"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:dynamodb:<REGION>:<ACCOUNT>:table/<TABLE>"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+	"cognito-identity:GetOpenIdTokenForDeveloperIdentity"
+      ],
+      "Resource":
+      "arn:aws:cognito-identity:<REGION>:<ACCOUNT>:identitypool/<POOL>"
+    },
+    {
+      "Sid": "",
+      "Resource": "*",
+      "Action": [
+	"logs:*"
+      ],
+      "Effect": "Allow"
+    }
+  ]
+}
