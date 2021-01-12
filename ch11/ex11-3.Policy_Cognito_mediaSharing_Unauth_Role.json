@@ -1,0 +1,16 @@
+// 리스트 11.3  Policy_Cognito_mediaSharing_Unauth_Role
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+	"s3:GetObject"
+      ],
+      "Resource": [
+	"arn:aws:s3:::<BUCKET>/public/*"
+      ]
+    }
+  ]
+}
