@@ -1,0 +1,34 @@
+# 리스트 14.8  AWS SAM을 통한 서버리스 애플리케이션 배포 설정
+
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  MySimpleFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs4.3
+      CodeUri: s3://<bucket>/MyCode.zip
+      Events:
+        MyUploadEvent:
+          Type: S3
+          Properties:
+            Id: !Ref Bucket
+            Events: Create
+  Bucket:
+    Type: AWS::S3::Bucket
+  MyTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+  MyAPI:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      DefinitionUri: swaggerFile.yml
