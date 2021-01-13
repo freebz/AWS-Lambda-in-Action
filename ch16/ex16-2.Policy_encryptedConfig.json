@@ -1,0 +1,16 @@
+// 리스트 16.2  Policy_encryptedConfig
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+	{
+	    "Effect": "Allow",
+	    "Action": [
+		"kms:Decrypt"
+	    ],
+	    "Resource": [
+		"<your KMS key ARN>"
+	    ]
+	}
+    ]
+}
